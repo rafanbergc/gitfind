@@ -1,0 +1,19 @@
+
+.repository .content {
+  padding: 10px;
+  margin: 0 20px;
+}
+
+.repository h3 {
+    font-size: 24px;
+    text-align: center;
+}
+
+.repository h5 {
+    color: #539BF5;
+    font-size: 24px;
+}
+
+.repository p {
+    color: #999999;
+}

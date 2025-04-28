@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+   
+}
+ body {
+    background-color: #21262e;
+    font-family: 'Kailasa';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+ hr {
+    background-color: #E5E5E533;
+    border: 1px solid #E5E5E533;
+    margin: 0 20px;
+} 
+
+@font-face {
+    font-family: 'Kailasa';
+    src: url('/src/assets/fonts/Kailasa.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  } 
