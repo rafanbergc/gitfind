@@ -9,14 +9,13 @@ const Input = ({ setCurrentUser, setRepos }) => {
     const userData = await fetch(`http://api.github.com/users/${user}`);
     const newUser = await userData.json();
 
-    const { avatar_url, name, bio } = newUser;
-    setCurrentUser({ avatar_url, name, bio });
-
+    const { avatar_url, name, login, bio } = newUser;
+    setCurrentUser({ avatar_url, name, login, bio });
+    console.log(newUser);
 
     const reposData = await fetch(`http://api.github.com/users/${user}/repos`);
     const newRepos = await reposData.json();
     setRepos(newRepos);
-
   };
 
   return (
@@ -26,8 +25,15 @@ const Input = ({ setCurrentUser, setRepos }) => {
         placeholder="@username"
         value={user}
         onChange={(event) => setUser(event.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault(); 
+            getData();
+          }
+        }}
       />
-      <button onClick={getData}>Buscar</button>
+
+      <button type="button" onClick={getData}>Buscar</button>
     </div>
   );
 };
